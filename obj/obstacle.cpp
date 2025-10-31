@@ -1,0 +1,15 @@
+
+
+void initObstacles()
+{
+
+
+
+}
+
+void updateObstacles()
+{
+
+
+
+}

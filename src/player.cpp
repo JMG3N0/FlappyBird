@@ -1,5 +1,7 @@
 #include "player.h"
 
+player Bird;
+
 void InitPlayer(Vector2 screenSize)
 {
 
@@ -27,5 +29,12 @@ void UpdatePlayer(player P1)
 		P1.position.y = P1.position.y + P1.speed * GetFrameTime();
 
 	}
+
+}
+
+void DrawPlayer(Vector2 position, Vector2 size)
+{
+
+	DrawRectangleV(position, size, BLACK);
 
 }

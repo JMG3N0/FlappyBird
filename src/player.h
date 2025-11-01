@@ -1,5 +1,5 @@
 #pragma once
-#include "physics.h"
+#include "raylib.h"
 
 struct player
 {
@@ -11,9 +11,8 @@ struct player
 
 };
 
-void InitPlayer(Vector2 screenSize);
-void UpdatePlayer(player P1);
-void DrawPlayer(Vector2 position, Vector2 size);
+void InitPlayer(Vector2 screenSize, player& Bird);
+void UpdatePlayer(player& P1);
+void DrawPlayer(player& p1);
 
-extern player Bird;
 

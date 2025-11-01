@@ -1,4 +1,4 @@
-
+#include "obstacle.h"
 
 void initObstacles()
 {

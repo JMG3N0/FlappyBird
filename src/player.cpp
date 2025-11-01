@@ -1,40 +1,37 @@
 #include "player.h"
 
-player Bird;
-
-void InitPlayer(Vector2 screenSize)
+void InitPlayer(Vector2 screenSize, player &bird)
 {
-
-	Bird.position.y = screenSize.y *0.2;
-	Bird.position.x = screenSize.x * 0.4;
-	Bird.size.x = screenSize.x * 0.10;
-	Bird.size.y = screenSize.y * 0.10;
-	Bird.speed = 100;
+	bird.size.x = screenSize.x * 0.10;
+	bird.size.y = screenSize.y * 0.10;
+	bird.position.y = screenSize.y *0.2;
+	bird.position.x = screenSize.x * 0.4;
+	bird.speed = 400;
 
 }
 
-void UpdatePlayer(player P1)
+void UpdatePlayer(player &bird)
 {
 
 	if (IsKeyDown(KEY_W))
 	{
 
-		P1.position.y = P1.position.y - P1.speed * GetFrameTime();
+		bird.position.y = bird.position.y - bird.speed * GetFrameTime();
 
 	}
 
 	if (IsKeyDown(KEY_S))
 	{
 
-		P1.position.y = P1.position.y + P1.speed * GetFrameTime();
+		bird.position.y = bird.position.y + bird.speed * GetFrameTime();
 
 	}
 
 }
 
-void DrawPlayer(Vector2 position, Vector2 size)
+void DrawPlayer(player& p1)
 {
 
-	DrawRectangleV(position, size, BLACK);
+	DrawRectangleV(p1.position, p1.size, BLACK);
 
 }

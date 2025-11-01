@@ -1,22 +1,24 @@
 #include "game.h"
 
-void InitGame(Vector2 screensize)
+void InitGame(Vector2 screensize, player& bird)
 {
 
-	InitPlayer(screensize);
+	InitPlayer(screensize, bird);
 
 }
 
-void UpdateGame(Vector2 screensize)
+void UpdateGame(Vector2 screensize, player& bird)
 {
 
-	UpdatePlayer(Bird);
+	UpdatePlayer(bird);
 
 }
 
-void DrawGame(Vector2 screenSize)
+void DrawGame(Vector2 screenSize, player &bird)
 {
 
-	DrawPlayer(Bird.position, Bird.size);
+	ClearBackground(RAYWHITE);
+
+	DrawPlayer(bird);
 
 }

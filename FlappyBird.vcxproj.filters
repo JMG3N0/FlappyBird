@@ -15,45 +15,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="obj\game.cpp">
+    <ClCompile Include="src\game.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="obj\main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="obj\menu.cpp">
+    <ClCompile Include="src\menu.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="obj\obstacle.cpp">
+    <ClCompile Include="src\obstacle.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="obj\physics.cpp">
+    <ClCompile Include="src\physics.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="obj\player.cpp">
+    <ClCompile Include="src\player.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="obj\screen.cpp">
+    <ClCompile Include="src\screen.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="obj\game.h">
+    <ClInclude Include="src\game.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="obj\menu.h">
+    <ClInclude Include="src\menu.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="obj\obstacle.h">
+    <ClInclude Include="src\obstacle.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="obj\physics.h">
+    <ClInclude Include="src\physics.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="obj\player.h">
+    <ClInclude Include="src\player.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="obj\screen.h">
+    <ClInclude Include="src\screen.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

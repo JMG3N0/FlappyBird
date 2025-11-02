@@ -6,6 +6,8 @@ struct obstacle
 
 	Vector2 size;
 	Vector2 position;
+	Vector2 mirrorPosition;
+	float gap;
 
 };
 

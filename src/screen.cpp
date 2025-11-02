@@ -6,16 +6,20 @@ void InitScreen()
 
 	InitWindow(screenSize.x, screenSize.y, "FlappyBird");
 	player bird;
-	InitGame(screenSize, bird);
+
+	obstacle pipe1;
+	obstacle pipe2;
+	
+	InitGame(screenSize, bird, pipe1, pipe2);
 
 	while (!WindowShouldClose())
 	{
 
-		UpdateGame(screenSize, bird);
+		UpdateGame(screenSize, bird, pipe1, pipe2);
 
 		BeginDrawing();
 
-		DrawGame(screenSize, bird);
+		DrawGame(screenSize, bird, pipe1, pipe2);
 
 		EndDrawing();
 

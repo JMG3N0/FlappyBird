@@ -20,3 +20,22 @@ bool RectangelColition(Vector2 size1, Vector2 position1, Vector2 size2, Vector2 
 	}
 
 }
+
+bool PointRecColition(Vector2 point, Vector2 recSize, Vector2 recPos)
+{
+	if (point.x > recPos.x 
+		&& point.x < recPos.x + recSize.x
+		&& point.y > recPos.y
+		&& point.y < recPos.y + recSize.y)
+	{
+
+		return true;
+
+	}
+	else
+	{
+
+		return false;
+
+	}
+}

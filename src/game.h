@@ -1,6 +1,7 @@
 #pragma once
 #include "player.h"
 #include "obstacle.h"
+#include "screenInstances.h"
 
 extern bool gameOver;
 

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\credits.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\menu.cpp" />
@@ -28,12 +29,14 @@
     <ClCompile Include="src\screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\credits.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\menu.h" />
     <ClInclude Include="src\obstacle.h" />
     <ClInclude Include="src\physics.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\screen.h" />
+    <ClInclude Include="src\screenInstances.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

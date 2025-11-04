@@ -4,7 +4,6 @@ void InitScreen()
 {
 	const char* currentVer = "Ver 0.1";
 	int verLength = MeasureText(currentVer, 30);
-
 	Vector2 screenSize = { 980, 600 };
 
 	InitWindow(screenSize.x, screenSize.y, "FlappyBird");
@@ -19,11 +18,17 @@ void InitScreen()
 	button credits;
 	button quit;
 
+	creditsText developer;
+	creditsText artist;
+	creditsText musician;
+
 	screen currentScreen;
 	currentScreen = Menu;
 
+
 	InitGame(screenSize, bird, pipe1, pipe2);
 	InitMenu(screenSize, title, start, credits, quit);
+	InitCredits(screenSize, developer, artist, musician);
 
 	while (!WindowShouldClose())
 	{
@@ -60,7 +65,13 @@ void InitScreen()
 
 		case Credits:
 
+			UpdateCredits(currentScreen);
 
+			BeginDrawing();
+
+			DrawCredits(developer, artist, musician);
+				
+			EndDrawing();
 
 			break;
 

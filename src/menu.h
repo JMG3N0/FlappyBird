@@ -1,15 +1,7 @@
 #pragma once
 #include "game.h"
-
-enum screen
-{
-
-	Menu,
-	Game,
-	Credits,
-	Quit
-
-};
+#include "credits.h"
+#include "screenInstances.h"
 
 struct button
 {

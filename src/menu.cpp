@@ -68,4 +68,5 @@ void DrawMenu(button& title, button& start, button& credits, button& quit)
 	DrawRectangleV(start.position, start.size, BLACK);
 	DrawRectangleV(credits.position, credits.size, BLACK);
 	DrawRectangleV(quit.position, quit.size, BLACK);
+
 }

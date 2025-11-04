@@ -2,6 +2,9 @@
 
 void InitScreen()
 {
+	const char* currentVer = "Ver 0.1";
+	int verLength = MeasureText(currentVer, 30);
+
 	Vector2 screenSize = { 980, 600 };
 
 	InitWindow(screenSize.x, screenSize.y, "FlappyBird");
@@ -34,6 +37,8 @@ void InitScreen()
 			BeginDrawing();
 
 			DrawMenu(title, start, credits, quit);
+
+			DrawText(currentVer, (screenSize.x - verLength * 2), (screenSize.y / 2), 30, BLACK);
 
 			EndDrawing();
 

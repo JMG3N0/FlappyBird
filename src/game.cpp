@@ -10,7 +10,7 @@ void InitGame(Vector2 screenSize, player& bird, obstacle& pipe1, obstacle& pipe2
 	
 }
 
-void UpdateGame(Vector2 screenSize, player& bird, obstacle& pipe1, obstacle& pipe2)
+void UpdateGame(Vector2 screenSize,screen& currentScreen, player& bird, obstacle& pipe1, obstacle& pipe2)
 {
 
 	if (gameOver)
@@ -21,8 +21,15 @@ void UpdateGame(Vector2 screenSize, player& bird, obstacle& pipe1, obstacle& pip
 
 			InitGame(screenSize, bird, pipe1, pipe2);
 
-		}
+		}	
 		
+		if (IsKeyPressed(KEY_ESCAPE))
+		{
+
+			currentScreen = Menu;
+
+		}
+
 		return;
 	
 	}
@@ -52,7 +59,7 @@ void DrawGame(Vector2 screenSize, player &bird, obstacle& pipe1, obstacle& pipe2
 
 		DrawRectangle(0, 0, screenSize.x, screenSize.y, { 0, 0, 0, 128 });
 
-		const char* overText = "Para empezar denuevo precione espacio\n para salir precione ESC";
+		const char* overText = "Press SPACE to restart the game\n To go back to the menu press ESC";
 		int textWidth = MeasureText(overText, 30);
 		DrawText(overText, screenSize.x * 0.5 - textWidth * 0.5, screenSize.y * 0.5, 30, RED);
 

@@ -25,7 +25,7 @@ void InitCredits(Vector2 screenSize, creditsText& Developer, creditsText& Artist
 void UpdateCredits(screen& currentScreen)
 {
 
-	if (IsKeyDown(KEY_BACKSPACE))
+	if (IsKeyDown(KEY_ESCAPE))
 	{
 
 		currentScreen = Menu;
@@ -43,7 +43,7 @@ void DrawCredits(creditsText& Developer, creditsText& Artist, creditsText& Music
 	DrawText(Artist.text, Artist.position.x, Artist.position.y, Artist.fontSize, WHITE);
 	DrawText(Musician.text, Musician.position.x, Musician.position.y, Musician.fontSize, WHITE);
 
-	DrawText("Press Backspace to go back to the main menu", 15, Musician.fontSize * 1.5, Musician.fontSize, LIGHTGRAY);
+	DrawText("Press ESC to go back to the main menu", 15, Musician.fontSize * 1.5, Musician.fontSize, LIGHTGRAY);
 	
 
 

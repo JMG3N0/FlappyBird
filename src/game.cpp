@@ -37,7 +37,7 @@ void UpdateGame(Vector2 screenSize,screen& currentScreen, player& bird, obstacle
 	UpdatePlayer(bird);
 	UpdateObstacles(screenSize, pipe1, pipe2);
 
-	if (RectangelColition(bird.size, bird.position, pipe1.size, pipe1.position) || RectangelColition(bird.size, bird.position, pipe2.size, pipe2.position))
+	if (RectangelColition(bird.size, bird.position, pipe1.size, pipe1.position) || RectangelColition(bird.size, bird.position, pipe1.size, pipe1.mirrorPosition))
 	{
 
 		gameOver = true;

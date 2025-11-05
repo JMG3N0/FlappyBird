@@ -26,10 +26,7 @@ void UpdatePlayer(Vector2 screenSize, player& bird)
 
 	}
 
-		bird.position.y = bird.position.y + bird.gravity * GetFrameTime();
-
-	
-
+	bird.position.y = bird.position.y + bird.gravity * GetFrameTime();
 
 }
 

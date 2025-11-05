@@ -8,11 +8,12 @@ struct player
 	Vector2 position;
 	float speed;
 	float velocity;
+	float gravity;
 
 };
 
 void InitPlayer(Vector2 screenSize, player& Bird);
-void UpdatePlayer(player& P1);
+void UpdatePlayer(Vector2 screenSize, player& bird);
 void DrawPlayer(player& p1);
 
 

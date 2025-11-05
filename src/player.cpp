@@ -7,25 +7,29 @@ void InitPlayer(Vector2 screenSize, player &bird)
 	bird.position.y = screenSize.y *0.5 - bird.size.y / 2;
 	bird.position.x = screenSize.x * 0.25 - bird.size.x;
 	bird.speed = 400;
+	bird.gravity = 150;
 
 }
 
-void UpdatePlayer(player &bird)
+void UpdatePlayer(Vector2 screenSize, player& bird)
 {
 
-	if (IsKeyDown(KEY_W))
+	if (bird.position.y > 0)
 	{
 
-		bird.position.y = bird.position.y - bird.speed * GetFrameTime();
+		if (IsKeyDown(KEY_W))
+		{
+
+			bird.position.y = bird.position.y - bird.speed * GetFrameTime();
+
+		}
 
 	}
 
-	if (IsKeyDown(KEY_S))
-	{
+		bird.position.y = bird.position.y + bird.gravity * GetFrameTime();
 
-		bird.position.y = bird.position.y + bird.speed * GetFrameTime();
+	
 
-	}
 
 }
 

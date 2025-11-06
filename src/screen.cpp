@@ -2,7 +2,7 @@
 
 void InitScreen()
 {
-	const char* currentVer = "Ver 0.2";
+	const char* currentVer = "Ver 0.3";
 	int verLength = MeasureText(currentVer, 30);
 	bool isPlaying = true;
 	Vector2 screenSize = { 980, 600 };
@@ -44,7 +44,7 @@ void InitScreen()
 
 			DrawMenu(title, start, credits, quit);
 
-			DrawText(currentVer, ( verLength ), (screenSize.y - 30), 30, LIGHTGRAY);
+			DrawText(currentVer, ( verLength ), (screenSize.y - 30), 30, RED);
 
 			EndDrawing();	
 

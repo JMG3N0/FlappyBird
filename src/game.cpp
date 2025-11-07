@@ -9,7 +9,7 @@ backGround building1;
 backGround building2;
 backGround buildingFar;
 
-void InitBackGround(Vector2 screenSize, backGround& floor1, backGround& floor2, backGround& cloud, backGround& building1, backGround& building2, backGround& buildingFar)
+void InitBackGround(Vector2 screenSize, backGround& downBackgroud1, backGround& downBackgroud2, backGround& cloud, backGround& building1, backGround& building2, backGround& buildingFar)
 {
 
 	float layer1Speed = 100;
@@ -19,15 +19,15 @@ void InitBackGround(Vector2 screenSize, backGround& floor1, backGround& floor2, 
 	Vector2 buildingSize = { screenSize.x * 0.09,screenSize.y * 0.2 };
 	Vector2 farBuildingSize = { screenSize.x * 0.04, screenSize.y * 0.13 };
 
-	floor1.size = { screenSize.x * 2, screenSize.y};
-	floor1.position.x = 0;
-	floor1.position.y = screenSize.y * 0.85;
-	floor1.speed = layer1Speed;
+	downBackgroud1.size = { screenSize.x * 2, screenSize.y};
+	downBackgroud1.position.x = 0;
+	downBackgroud1.position.y = screenSize.y * 0.85;
+	downBackgroud1.speed = layer1Speed;
 
-	floor2.size = floor1.size;
-	floor2.position.x = floor1.position.x;
-	floor2.position.y = screenSize.y * 0.75;
-	floor2.speed = layer2Speed;
+	downBackgroud2.size = downBackgroud1.size;
+	downBackgroud2.position.x = downBackgroud1.position.x;
+	downBackgroud2.position.y = screenSize.y * 0.75;
+	downBackgroud2.speed = layer2Speed;
 
 	cloud.size.x = screenSize.x * 0.2;
 	cloud.size.y = screenSize.y * 0.1;
@@ -47,7 +47,7 @@ void InitBackGround(Vector2 screenSize, backGround& floor1, backGround& floor2, 
 
 	buildingFar.size = farBuildingSize;
 	buildingFar.position.x = screenSize.x;
-	buildingFar.position.y = floor2.position.y - buildingFar.size.y;
+	buildingFar.position.y = downBackgroud2.position.y - buildingFar.size.y;
 	buildingFar.speed = layer2Speed;
 
 }

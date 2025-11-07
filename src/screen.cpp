@@ -7,7 +7,7 @@ void InitScreen()
 	bool isPlaying = true;
 	Vector2 screenSize = { 980, 600 };
 
-	InitWindow(screenSize.x, screenSize.y, "FlappyBird");
+	InitWindow(static_cast<int>(screenSize.x), static_cast<int>(screenSize.y), "FlappyBird");
 	
 	player bird;
 
@@ -44,7 +44,7 @@ void InitScreen()
 
 			DrawMenu(title, start, credits, quit);
 
-			DrawText(currentVer, ( verLength ), (screenSize.y - 30), 30, RED);
+			DrawText(currentVer, static_cast<int>( verLength ), static_cast<int>(screenSize.y - 30.0f), 30, RED);
 
 			EndDrawing();	
 

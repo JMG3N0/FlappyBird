@@ -3,22 +3,22 @@
 void InitCredits(Vector2 screenSize, creditsText& Developer, creditsText& Artist, creditsText& Musician)
 {
 
-	float gap = screenSize.y * 0.15;
+	float gap = screenSize.y * 0.15f;
 
 	Developer.text = "Developer: Ivan Abraham";
-	Developer.fontSize = 20;
-	Developer.textLength = MeasureText(Developer.text, Developer.fontSize);
-	Developer.position = { (screenSize.x / 2) - (Developer.textLength / 2), Developer.fontSize + gap};
+	Developer.fontSize = 20.0f;
+	Developer.textLength = MeasureText(Developer.text, static_cast<int>(Developer.fontSize));
+	Developer.position = { (screenSize.x / 2.0f) - (Developer.textLength / 2.0f), Developer.fontSize + gap};
 
 	Artist.text = "Artist: Ivan Abraham";
-	Artist.fontSize = 20;
-	Artist.textLength = MeasureText(Artist.text, Artist.fontSize);
-	Artist.position = { (screenSize.x / 2) - (Artist.textLength / 2), (Developer.position.y + gap) };
+	Artist.fontSize = 20.0f;
+	Artist.textLength = MeasureText(Artist.text, static_cast<int>(Artist.fontSize));
+	Artist.position = { (screenSize.x / 2.0f) - (Artist.textLength / 2.0f), (Developer.position.y + gap) };
 
 	Musician.text = "Musician: Ivan Abraham";
-	Musician.fontSize = 20;
-	Musician.textLength = MeasureText(Musician.text, Musician.fontSize);
-	Musician.position = { (screenSize.x / 2) - (Musician.textLength / 2), (Artist.position.y + gap) };
+	Musician.fontSize = 20.0f;
+	Musician.textLength = MeasureText(Musician.text, static_cast<int>(Musician.fontSize));
+	Musician.position = { (screenSize.x / 2.0f) - (Musician.textLength / 2.0f), (Artist.position.y + gap) };
 
 }
 
@@ -39,11 +39,11 @@ void DrawCredits(creditsText& Developer, creditsText& Artist, creditsText& Music
 	
 	ClearBackground(BLACK);
 
-	DrawText(Developer.text, Developer.position.x, Developer.position.y, Developer.fontSize, WHITE);
-	DrawText(Artist.text, Artist.position.x, Artist.position.y, Artist.fontSize, WHITE);
-	DrawText(Musician.text, Musician.position.x, Musician.position.y, Musician.fontSize, WHITE);
+	DrawText(Developer.text, static_cast<int>(Developer.position.x), static_cast<int>(Developer.position.y), static_cast<int>(Developer.fontSize), WHITE);
+	DrawText(Artist.text, static_cast<int>(Artist.position.x), static_cast<int>(Artist.position.y), static_cast<int>(Artist.fontSize), WHITE);
+	DrawText(Musician.text, static_cast<int>(Musician.position.x), static_cast<int>(Musician.position.y), static_cast<int>(Musician.fontSize), WHITE);
 
-	DrawText("Press ESC to go back to the main menu", 15, Musician.fontSize * 1.5, Musician.fontSize, LIGHTGRAY);
+	DrawText("Press ESC to go back to the main menu", 15, static_cast<int>(Musician.fontSize * 1.5f), static_cast<int>(Musician.fontSize), LIGHTGRAY);
 	
 
 

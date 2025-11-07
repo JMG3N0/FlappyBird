@@ -2,7 +2,6 @@
 
 int main()
 {
-
 	InitScreen();
-
+	return 0;
 }

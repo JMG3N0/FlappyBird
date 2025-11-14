@@ -2,19 +2,19 @@
 
 void InitPlayer(Vector2 screenSize, player &bird)
 {
-	bird.size.x = screenSize.x * 0.10;
-	bird.size.y = screenSize.y * 0.10;
-	bird.position.y = screenSize.y *0.5 - bird.size.y / 2;
-	bird.position.x = screenSize.x * 0.25 - bird.size.x;
-	bird.speed = 400;
-	bird.gravity = 150;
+	bird.size.x = screenSize.x * 0.10f;
+	bird.size.y = screenSize.y * 0.10f;
+	bird.position.y = screenSize.y *0.5f - bird.size.y / 2.0f;
+	bird.position.x = screenSize.x * 0.25f - bird.size.x;
+	bird.speed = 400.0f;
+	bird.gravity = 150.0f;
 
 }
 
-void UpdatePlayer(Vector2 screenSize, player& bird)
+void UpdatePlayer(player& bird)
 {
 
-	if (bird.position.y > 0)
+	if (bird.position.y > 0.0f)
 	{
 
 		if (IsKeyDown(KEY_W))

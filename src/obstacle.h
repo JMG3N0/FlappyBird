@@ -11,6 +11,6 @@ struct obstacle
 
 };
 
-void InitObstacles(Vector2 screenSize, obstacle& pipe1, obstacle& pipe2);
-void UpdateObstacles(Vector2 screenSize, obstacle& pipe1, obstacle& pipe2);
-void DrawObstacle(obstacle& pipe1, obstacle& pipe2);
+void InitObstacles(Vector2 screenSize, obstacle& pipe1);
+void UpdateObstacles(Vector2 screenSize, obstacle& pipe1);
+void DrawObstacle(obstacle& pipe1);

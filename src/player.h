@@ -13,7 +13,7 @@ struct player
 };
 
 void InitPlayer(Vector2 screenSize, player& Bird);
-void UpdatePlayer(Vector2 screenSize, player& bird);
+void UpdatePlayer( player& bird);
 void DrawPlayer(player& p1);
 
 

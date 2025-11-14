@@ -3,32 +3,32 @@
 void InitMenu(Vector2 screenSize, button& title, button& start, button& credits, button& quit)
 {
 
-	float gap = screenSize.y * 0.10;
+	float gap = screenSize.y * 0.10f;
 
-	title.size.x = screenSize.x * 0.75;
-	title.size.y = screenSize.x * 0.12;
-	title.position.x = (screenSize.x / 2) - (title.size.x / 2);
+	title.size.x = screenSize.x * 0.75f;
+	title.size.y = screenSize.x * 0.12f;
+	title.position.x = (screenSize.x / 2.0f) - (title.size.x / 2.0f);
 	title.position.y = gap;
 
 
-	start.size.x = screenSize.x * 0.20;
-	start.size.y = screenSize.y * 0.10;
-	start.position.x = (screenSize.x / 2) - (start.size.x / 2);
+	start.size.x = screenSize.x * 0.20f;
+	start.size.y = screenSize.y * 0.10f;
+	start.position.x = (screenSize.x / 2.0f) - (start.size.x / 2.0f);
 	start.position.y = title.position.y + title.size.y + gap;
 
-	credits.size.x = screenSize.x * 0.20;
-	credits.size.y = screenSize.y * 0.10;
-	credits.position.x = (screenSize.x / 2) - (start.size.x / 2);
+	credits.size.x = screenSize.x * 0.20f;
+	credits.size.y = screenSize.y * 0.10f;
+	credits.position.x = (screenSize.x / 2.0f) - (start.size.x / 2.0f);
 	credits.position.y = start.position.y + start.size.y + gap;
 
-	quit.size.x = screenSize.x * 0.20;
-	quit.size.y = screenSize.y * 0.10;
-	quit.position.x = (screenSize.x / 2) - (start.size.x / 2);
+	quit.size.x = screenSize.x * 0.20f;
+	quit.size.y = screenSize.y * 0.10f;
+	quit.position.x = (screenSize.x / 2.0f) - (start.size.x / 2.0f);
 	quit.position.y = credits.position.y + credits.size.y + gap;
 
 }
 
-void UpdateMenu(Vector2 screenSize, screen& currentScreen, button& start, button& credits, button& quit )
+void UpdateMenu( screen& currentScreen, button& start, button& credits, button& quit )
 {
 
 	Vector2 mousePosition = GetMousePosition();

@@ -12,7 +12,7 @@ void InitScreen()
 	player bird;
 
 	obstacle pipe1;
-	obstacle pipe2;
+	
 
 	button title;
 	button start;
@@ -27,10 +27,11 @@ void InitScreen()
 	currentScreen = Menu;
 
 
-	InitGame(screenSize, bird, pipe1, pipe2);
+	InitGame(screenSize, bird, pipe1);
 	InitMenu(screenSize, title, start, credits, quit);
 	InitCredits(screenSize, developer, artist, musician);
 
+	
 	while (isPlaying)
 	{
 		switch (currentScreen)
@@ -38,7 +39,7 @@ void InitScreen()
 
 		case Menu:
 
-			UpdateMenu(screenSize, currentScreen, start, credits, quit);
+			UpdateMenu(currentScreen, start, credits, quit);
 
 			BeginDrawing();
 
@@ -53,11 +54,11 @@ void InitScreen()
 
 		case Game:
 
-			UpdateGame(screenSize, currentScreen, bird, pipe1, pipe2);
+			UpdateGame(screenSize, currentScreen, bird, pipe1);
 
 			BeginDrawing();
 
-			DrawGame(screenSize, bird, pipe1, pipe2);
+			DrawGame(screenSize, bird, pipe1);
 
 			EndDrawing();
 

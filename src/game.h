@@ -5,9 +5,9 @@
 
 extern bool gameOver;
 
-void InitGame(Vector2 screensize, player& bird, obstacle& pipe1, obstacle& pipe2);
-void UpdateGame(Vector2 screenSize, screen& currentScreen, player& bird, obstacle& pipe1, obstacle& pipe2);
-void DrawGame(Vector2 screenSize, player& bird, obstacle& pipe1, obstacle& pipe2);
+void InitGame(Vector2 screensize, player& bird, obstacle& pipe1);
+void UpdateGame(Vector2 screenSize, screen& currentScreen, player& bird, obstacle& pipe1);
+void DrawGame(Vector2 screenSize, player& bird, obstacle& pipe1);
 
 struct backGround
 {

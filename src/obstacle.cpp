@@ -1,31 +1,27 @@
 #include "obstacle.h"
 
-void InitObstacles(Vector2 screenSize, obstacle& pipe1, obstacle& pipe2)
+void InitObstacles(Vector2 screenSize, obstacle& pipe1)
 {
 	
 	
-	pipe1.gap = screenSize.y * 0.3;
+	pipe1.gap = screenSize.y * 0.3f;
 	
-	pipe1.size.x = screenSize.x * 0.1;
-	pipe1.size.y = screenSize.y * 0.75;
+	pipe1.size.x = screenSize.x * 0.1f;
+	pipe1.size.y = screenSize.y * 0.75f;
 	
 	pipe1.position.x = screenSize.x;
-	pipe1.position.y = (screenSize.y * 0.5) + (pipe1.size.y * 0.2);
+	pipe1.position.y = (screenSize.y * 0.5f) + (pipe1.size.y * 0.2f);
 	
 	pipe1.mirrorPosition.x = pipe1.position.x;
 	pipe1.mirrorPosition.y = pipe1.position.y - pipe1.size.y - pipe1.gap;
 
-	/*
-	pipe2.size = pipe1.size;
-	pipe2.position.x = pipe1.position.x + (screenSize.x * 0.5);
-	pipe2.position.y = pipe1.position.y;
-	*/
+	
 }
 
-void UpdateObstacles(Vector2 screenSize, obstacle& pipe1, obstacle& pipe2)
+void UpdateObstacles(Vector2 screenSize, obstacle& pipe1)
 {
 
-	float speed = 200;
+	float speed = 200.0f;
 
 	pipe1.position.x = pipe1.position.x - (speed * GetFrameTime());
 	pipe1.mirrorPosition.x = pipe1.position.x;
@@ -33,25 +29,23 @@ void UpdateObstacles(Vector2 screenSize, obstacle& pipe1, obstacle& pipe2)
 	pipe2.position.x = pipe2.position.x - (speed * GetFrameTime());
 	*/
 
-	if (pipe1.position.x + pipe1.size.x <= 0)
+	if (pipe1.position.x + pipe1.size.x <= 0.0f)
 	{
 
-		float variability = GetRandomValue(0, (screenSize.y * 0.25));
+		float variability = static_cast<float>(GetRandomValue(0, static_cast<int>((screenSize.y * 0.25f))));
 
 		pipe1.position.x = screenSize.x;
-		pipe1.position.y = (screenSize.y * 0.5) + (pipe1.size.y * 0.2) - variability;
+		pipe1.position.y = (screenSize.y * 0.5f) + (pipe1.size.y * 0.2f) - variability;
 		pipe1.mirrorPosition.y = pipe1.position.y - pipe1.size.y - pipe1.gap;
 
 	}
 
 }
 
-void DrawObstacle(obstacle& pipe1, obstacle& pipe2)
+void DrawObstacle(obstacle& pipe1)
 {
 
 	DrawRectangleV(pipe1.position, pipe1.size, BLACK);
 	DrawRectangleV(pipe1.mirrorPosition, pipe1.size, BLACK);
-	/*
-	DrawRectangleV(pipe2.position, pipe2.size, BLACK);
-	*/
+	
 }

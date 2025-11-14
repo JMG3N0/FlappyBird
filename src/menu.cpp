@@ -65,8 +65,11 @@ void DrawMenu(button& title, button& start, button& credits, button& quit)
 	ClearBackground(RAYWHITE);
 
 	DrawRectangleV(title.position, title.size, BLACK);
+	DrawText("Flappy Bird", static_cast<int>(title.position.x + 30.0f), static_cast<int>(title.position.y), static_cast<int>(title.size.y), WHITE);
 	DrawRectangleV(start.position, start.size, BLACK);
-	DrawRectangleV(credits.position, credits.size, BLACK);
+	DrawText("Play", static_cast<int>(start.position.x + 30.0f), static_cast<int>(start.position.y), static_cast<int>(start.size.y), WHITE);
+	DrawRectangleV({credits.position.x - 10.0f, credits.position.y}, { credits.size.x + 50.0f, credits.size.y }, BLACK);
+	DrawText("Credits", static_cast<int>(credits.position.x), static_cast<int>(credits.position.y), static_cast<int>(credits.size.y), WHITE);
 	DrawRectangleV(quit.position, quit.size, BLACK);
-
+	DrawText("Exit", static_cast<int>(quit.position.x + 30.0f), static_cast<int>(quit.position.y), static_cast<int>(quit.size.y), WHITE);
 }

@@ -2,13 +2,15 @@
 
 void InitScreen()
 {
-	const char* currentVer = "Ver 0.3";
+	const char* currentVer = " Ver 0.3";
 	int verLength = MeasureText(currentVer, 30);
-	bool isPlaying = true;
+	//bool isPlaying = true;
 	Vector2 screenSize = { 980, 600 };
 
 	InitWindow(static_cast<int>(screenSize.x), static_cast<int>(screenSize.y), "FlappyBird");
-	
+	SetExitKey(NULL);
+
+
 	player bird;
 
 	obstacle pipe1;
@@ -20,6 +22,7 @@ void InitScreen()
 	button quit;
 
 	creditsText developer;
+	creditsText forker;
 	creditsText artist;
 	creditsText musician;
 
@@ -29,10 +32,10 @@ void InitScreen()
 
 	InitGame(screenSize, bird, pipe1);
 	InitMenu(screenSize, title, start, credits, quit);
-	InitCredits(screenSize, developer, artist, musician);
+	InitCredits(screenSize, developer, forker, artist, musician);
 
 	
-	while (isPlaying)
+	while (!WindowShouldClose())
 	{
 		switch (currentScreen)
 		{
@@ -71,7 +74,9 @@ void InitScreen()
 
 			BeginDrawing();
 
-			DrawCredits(developer, artist, musician);
+			DrawCredits(developer, forker, artist, musician);
+
+			DrawText(currentVer, static_cast<int>(verLength), static_cast<int>(screenSize.y - 30.0f), 30, RED);
 				
 			EndDrawing();
 
@@ -80,8 +85,8 @@ void InitScreen()
 
 		case Quit:
 
-			isPlaying = false;
-
+			//isPlaying = false;
+			CloseWindow();
 			return;
 
 		}

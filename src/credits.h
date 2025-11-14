@@ -10,6 +10,6 @@ struct creditsText
 
 };
 
-void InitCredits(Vector2 screenSize, creditsText& Developer, creditsText& Artist, creditsText& Musician);
+void InitCredits(Vector2 screenSize, creditsText& Developer, creditsText& Forker, creditsText& Artist, creditsText& Musician);
 void UpdateCredits(screen& currentScreen);
-void DrawCredits(creditsText& Developer, creditsText& Artist, creditsText& Musician);
+void DrawCredits(creditsText& Developer, creditsText& Forker, creditsText& Artist, creditsText& Musician);

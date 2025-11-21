@@ -1,97 +1,100 @@
 #include "screen.h"
 
-void InitScreen()
-{
-	const char* currentVer = " Ver 0.3";
-	int verLength = MeasureText(currentVer, 30);
-	//bool isPlaying = true;
-	Vector2 screenSize = { 980, 600 };
+namespace flappy {
 
-	InitWindow(static_cast<int>(screenSize.x), static_cast<int>(screenSize.y), "FlappyBird");
-	SetExitKey(NULL);
-
-
-	player bird;
-
-	obstacle pipe1;
-	
-
-	button title;
-	button start;
-	button credits;
-	button quit;
-
-	creditsText developer;
-	creditsText forker;
-	creditsText artist;
-	creditsText musician;
-
-	screen currentScreen;
-	currentScreen = Menu;
-
-
-	InitGame(screenSize, bird, pipe1);
-	InitMenu(screenSize, title, start, credits, quit);
-	InitCredits(screenSize, developer, forker, artist, musician);
-
-	
-	while (!WindowShouldClose())
+	void InitScreen()
 	{
-		switch (currentScreen)
+		const char* currentVer = " Ver 0.3";
+		int verLength = MeasureText(currentVer, 30);
+		//bool isPlaying = true;
+		Vector2 screenSize = { 980, 600 };
+
+		InitWindow(static_cast<int>(screenSize.x), static_cast<int>(screenSize.y), "FlappyBird");
+		SetExitKey(NULL);
+
+
+		player bird;
+
+		obstacle pipe1;
+
+
+		button title;
+		button start;
+		button credits;
+		button quit;
+
+		creditsText developer;
+		creditsText forker;
+		creditsText artist;
+		creditsText musician;
+
+		screen currentScreen;
+		currentScreen = Menu;
+
+
+		InitGame(screenSize, bird, pipe1);
+		InitMenu(screenSize, title, start, credits, quit);
+		InitCredits(screenSize, developer, forker, artist, musician);
+
+
+		while (!WindowShouldClose())
 		{
+			switch (currentScreen)
+			{
 
-		case Menu:
+			case Menu:
 
-			UpdateMenu(currentScreen, start, credits, quit);
+				UpdateMenu(currentScreen, start, credits, quit);
 
-			BeginDrawing();
+				BeginDrawing();
 
-			DrawMenu(title, start, credits, quit);
+				DrawMenu(title, start, credits, quit);
 
-			DrawText(currentVer, static_cast<int>( verLength ), static_cast<int>(screenSize.y - 30.0f), 30, RED);
+				DrawText(currentVer, static_cast<int>(verLength), static_cast<int>(screenSize.y - 30.0f), 30, RED);
 
-			EndDrawing();	
+				EndDrawing();
 
-			break;
-
-
-		case Game:
-
-			UpdateGame(screenSize, currentScreen, bird, pipe1);
-
-			BeginDrawing();
-
-			DrawGame(screenSize, bird, pipe1);
-
-			EndDrawing();
-
-			break;
+				break;
 
 
-		case Credits:
+			case Game:
 
-			UpdateCredits(currentScreen);
+				UpdateGame(screenSize, currentScreen, bird, pipe1);
 
-			BeginDrawing();
+				BeginDrawing();
 
-			DrawCredits(developer, forker, artist, musician);
+				DrawGame(screenSize, bird, pipe1);
 
-			DrawText(currentVer, static_cast<int>(verLength), static_cast<int>(screenSize.y - 30.0f), 30, RED);
-				
-			EndDrawing();
+				EndDrawing();
 
-			break;
+				break;
 
 
-		case Quit:
+			case Credits:
 
-			//isPlaying = false;
-			CloseWindow();
-			return;
+				UpdateCredits(currentScreen);
+
+				BeginDrawing();
+
+				DrawCredits(developer, forker, artist, musician);
+
+				DrawText(currentVer, static_cast<int>(verLength), static_cast<int>(screenSize.y - 30.0f), 30, RED);
+
+				EndDrawing();
+
+				break;
+
+
+			case Quit:
+
+				//isPlaying = false;
+				CloseWindow();
+				return;
+
+			}
 
 		}
 
+
 	}
-
-
 }

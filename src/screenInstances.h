@@ -1,11 +1,12 @@
 #pragma once
+namespace flappy {
+	enum screen
+	{
 
-enum screen
-{
+		Menu,
+		Game,
+		Credits,
+		Quit
 
-	Menu,
-	Game,
-	Credits,
-	Quit
-
-};
+	};
+}

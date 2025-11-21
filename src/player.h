@@ -10,12 +10,12 @@ namespace flappy {
 		float speed;
 		float velocity;
 		float gravity;
-
+		bool alive;
 	};
 
-	void InitPlayer(Vector2 screenSize, player& Bird);
-	void UpdatePlayer(player& bird);
-	void DrawPlayer(player& p1);
+	void InitPlayer(Vector2 screenSize, player& bird, bool multiplayer, player& bird2);
+	void UpdatePlayer(player& bird, player& bird2);
+	void DrawPlayer(player& p1, player& p2);
 
 
 }

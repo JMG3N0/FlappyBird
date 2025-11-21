@@ -1,10 +1,11 @@
 #include "screen.h"
+#include "select.h"
 
 namespace flappy {
 
 	void InitScreen()
 	{
-		const char* currentVer = " Ver 0.3";
+		const char* currentVer = " Ver 0.4";
 		int verLength = MeasureText(currentVer, 30);
 		//bool isPlaying = true;
 		Vector2 screenSize = { 980, 600 };
@@ -14,6 +15,7 @@ namespace flappy {
 
 
 		player bird;
+		player bird2;
 
 		obstacle pipe1;
 
@@ -31,8 +33,9 @@ namespace flappy {
 		screen currentScreen;
 		currentScreen = Menu;
 
+		bool multiplayer = false;
 
-		InitGame(screenSize, bird, pipe1);
+		
 		InitMenu(screenSize, title, start, credits, quit);
 		InitCredits(screenSize, developer, forker, artist, musician);
 
@@ -56,14 +59,22 @@ namespace flappy {
 
 				break;
 
+			case SelectScreen:
+				multiplayer = UpdateSelect(currentScreen, screenSize);
+				InitGame(screenSize, bird, pipe1, bird2, multiplayer);
+				BeginDrawing();
+				DrawSelect(screenSize);
+				
+				EndDrawing();
 
+				break;
 			case Game:
 
-				UpdateGame(screenSize, currentScreen, bird, pipe1);
+				UpdateGame(screenSize, currentScreen, bird, pipe1, bird2, multiplayer);
 
 				BeginDrawing();
 
-				DrawGame(screenSize, bird, pipe1);
+				DrawGame(screenSize, bird, pipe1, bird2);
 
 				EndDrawing();
 

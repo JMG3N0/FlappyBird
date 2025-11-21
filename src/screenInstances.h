@@ -6,7 +6,8 @@ namespace flappy {
 		Menu,
 		Game,
 		Credits,
-		Quit
+		Quit,
+		SelectScreen
 
 	};
 }

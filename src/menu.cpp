@@ -39,7 +39,8 @@ namespace flappy {
 			&& PointRecColition(mousePosition, start.size, start.position))
 		{
 
-			currentScreen = Game;
+			currentScreen = SelectScreen;
+		
 
 		}
 
@@ -48,7 +49,7 @@ namespace flappy {
 		{
 
 			currentScreen = Credits;
-
+			
 		}
 
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)
@@ -56,9 +57,9 @@ namespace flappy {
 		{
 
 			currentScreen = Quit;
-
+			
 		}
-
+		
 	}
 
 	void DrawMenu(button& title, button& start, button& credits, button& quit)

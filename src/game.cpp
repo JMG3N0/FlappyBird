@@ -52,10 +52,10 @@ namespace flappy {
 
 	}
 
-	void InitGame(Vector2 screenSize, player& bird, obstacle& pipe1)
+	void InitGame(Vector2 screenSize, player& bird, obstacle& pipe1, player& bird2, bool multiplayer)
 	{
 		gameOver = false;
-		InitPlayer(screenSize, bird);
+		InitPlayer(screenSize, bird, multiplayer, bird2);
 		InitObstacles(screenSize, pipe1);
 		InitBackGround(screenSize, floor1, floor2, cloud, building1, building2, buildingFar);
 	}
@@ -93,23 +93,23 @@ namespace flappy {
 	}
 
 
-	void UpdateGame(Vector2 screenSize, screen& currentScreen, player& bird, obstacle& pipe1)
+	void UpdateGame(Vector2 screenSize, screen& currentScreen, player& bird, obstacle& pipe1, player& bird2, bool multiplayer)
 	{
 
-		if (gameOver)
+		if (gameOver == true)
 		{
 
 			if (IsKeyPressed(KEY_SPACE))
 			{
 
-				InitGame(screenSize, bird, pipe1);
+				InitGame(screenSize, bird, pipe1, bird2, multiplayer);
 
 			}
 
 			if (IsKeyPressed(KEY_ESCAPE))
 			{
 
-				InitGame(screenSize, bird, pipe1);
+			//	InitGame(screenSize, bird, pipe1);
 
 				currentScreen = Menu;
 
@@ -120,16 +120,39 @@ namespace flappy {
 		}
 
 		UpdateBackground(screenSize, cloud, building1, building2, buildingFar);
-		UpdatePlayer(bird);
+		UpdatePlayer(bird, bird2);
 		UpdateObstacles(screenSize, pipe1);
 
-		if (RectangelColition(bird.size, bird.position, pipe1.size, pipe1.position) || RectangelColition(bird.size, bird.position, pipe1.size, pipe1.mirrorPosition) || bird.position.y >= screenSize.y)
+		if (multiplayer == false)
 		{
 
-			gameOver = true;
 
+			if (RectangelColition(bird.size, bird.position, pipe1.size, pipe1.position) || RectangelColition(bird.size, bird.position, pipe1.size, pipe1.mirrorPosition) || bird.position.y >= screenSize.y)
+			{
+
+				gameOver = true;
+
+			}
 		}
+		if (multiplayer == true)
+		{
+			if (RectangelColition(bird.size, bird.position, pipe1.size, pipe1.position) || RectangelColition(bird.size, bird.position, pipe1.size, pipe1.mirrorPosition) || bird.position.y >= screenSize.y)
+			{
 
+				bird.alive = false;
+
+			}
+			if (RectangelColition(bird2.size, bird2.position, pipe1.size, pipe1.position) || RectangelColition(bird2.size, bird2.position, pipe1.size, pipe1.mirrorPosition) || bird2.position.y >= screenSize.y)
+			{
+
+				bird2.alive = false;
+
+			}
+			if (bird.alive == false && bird2.alive == false)
+			{
+				gameOver = true;
+			}
+		}
 	}
 
 	void DrawBackground(backGround& upperBackground, backGround& structure1, backGround& structure2, backGround& structure3)
@@ -147,13 +170,13 @@ namespace flappy {
 
 	}
 
-	void DrawGame(Vector2 screenSize, player& bird, obstacle& pipe1)
+	void DrawGame(Vector2 screenSize, player& bird, obstacle& pipe1, player& bird2)
 	{
 
 		ClearBackground(RAYWHITE);
 
 		DrawBackground(cloud, building1, building2, buildingFar);
-		DrawPlayer(bird);
+		DrawPlayer(bird, bird2);
 		DrawObstacle(pipe1);
 
 		if (gameOver)
